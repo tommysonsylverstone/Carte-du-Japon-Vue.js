@@ -60,15 +60,17 @@ export default {
     $(".container").mapael({
       map: {
         name: "japan",
-        width: 800,
         zoom: {
           enabled: true,
         },
         defaultArea: {
           attrs: {
             "fill": "#555555",
-            "stroke-width": "0"
+            "stroke-width": "0",
           },
+          attrsHover: {
+            "fill": "#5E88BF"
+          }
         }
       },
     });
@@ -80,6 +82,6 @@ export default {
 
 <style>
 .map {
-  background-color: bisque;
+  background-color: #8BCAD9;
 }
 </style>
