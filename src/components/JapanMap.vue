@@ -14,8 +14,6 @@ export default {
   data() {
     return {
       updatedOptions: {
-        areas: {},
-        plots: {},
         newPlots: {
           Tokyo: {
             plotsOn: "To",
@@ -32,7 +30,7 @@ export default {
               "stroke-width": "0",
             },
             text: {
-              //text that goes after the plot
+              //text that goes after the plot https://www.vincentbroute.fr/mapael/raphael-js-documentation/index.html#Element.attr
               content: "Tokyo",
               margin: 5,
               attrs: {
@@ -66,6 +64,12 @@ export default {
         zoom: {
           enabled: true,
         },
+        defaultArea: {
+          attrs: {
+            "fill": "#555555",
+            "stroke-width": "0"
+          },
+        }
       },
     });
 
@@ -74,7 +78,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .map {
   background-color: bisque;
 }
