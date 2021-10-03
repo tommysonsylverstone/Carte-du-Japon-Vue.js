@@ -71,8 +71,14 @@ export default {
           attrsHover: {
             "fill": "#5E88BF"
           }
-        }
+        },
       },
+      areas: {
+          "Hokkaido": {
+            value: 1,
+            href: "test.html"
+          }
+        }
     });
 
     $(".container").trigger("update", this.updatedOptions);
