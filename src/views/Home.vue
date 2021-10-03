@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <JapanMap />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import JapanMap from "../components/JapanMap.vue";
 export default {
-  name: 'Home',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    JapanMap,
+  },
+};
 </script>
+
+<style lang="scss">
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+</style>

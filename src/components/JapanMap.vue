@@ -2,6 +2,7 @@
   <div class="container">
     <div class="map">Alternative content</div>
   </div>
+  <router-view />
 </template>
 
 <script>
@@ -76,7 +77,7 @@ export default {
       areas: {
           "Hokkaido": {
             value: 1,
-            href: "/about"
+            href: ""
           },
           "Okinawa": {
             value: 2,
