@@ -76,7 +76,7 @@ export default {
       areas: {
           "Hokkaido": {
             value: 1,
-            href: ""
+            href: "/about"
           },
           "Okinawa": {
             value: 2,
