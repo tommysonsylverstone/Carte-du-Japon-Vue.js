@@ -4,7 +4,6 @@
 
 <script>
 import JapanMap from "./components/JapanMap.vue";
-
 export default {
   name: "App",
   components: {
