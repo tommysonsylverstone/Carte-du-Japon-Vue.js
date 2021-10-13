@@ -75,8 +75,8 @@ export default {
       },
       areas: {
         Hokkaido: {
-          value: 1,
-          href: "/about",
+          href: "",
+          tooltip: {content: "<span>Hokkaido</span>"}
         },
         Okinawa: {
           value: 2,
@@ -248,7 +248,8 @@ export default {
         },
         Tokyo: {
           value: 44,
-          href: "",
+          href: "#",
+          tooltip: {content: "Test"}
         },
         Nara: {
           value: 45,
@@ -273,5 +274,18 @@ export default {
 <style>
 .map {
   background-color: #8bcad9;
+}
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: #474c4b;
+    moz-opacity: 0.70;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #fff;
 }
 </style>
