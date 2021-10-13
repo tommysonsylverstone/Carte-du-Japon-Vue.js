@@ -76,8 +76,8 @@ export default {
             click: function (e, id) {
               if (id) {
                 $(".modal").remove();
-                var x = e.clientX;
-                var y = e.clientY;
+                var x = e.clientX + scrollX;
+                var y = e.clientY + scrollY;
                 $(".map").append(
                   "<div class='modal " +
                     id +
