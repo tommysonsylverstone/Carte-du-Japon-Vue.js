@@ -65,18 +65,41 @@ export default {
         },
         defaultArea: {
           attrs: {
-            fill: "#555555",
-            "stroke-width": "0",
+            fill: "#5ba4ff",
+            stroke: "#99c7ff",
+            cursor: "pointer",
           },
           attrsHover: {
-            fill: "#5E88BF",
+            animDuration: 0,
+          },
+          eventHandlers: {
+            click: function (e, id, mapElem) {
+              var newData = {
+                areas: {},
+              };
+              if (mapElem.originalAttrs.fill == "#5ba4ff") {
+                newData.areas[id] = {
+                  attrs: {
+                    fill: "#0088db",
+                  },
+                };
+              } else {
+                newData.areas[id] = {
+                  attrs: {
+                    fill: "#5ba4ff",
+                  },
+                };
+              }
+              $(".container").trigger("update", [{ mapOptions: newData }]);
+            },
           },
         },
       },
       areas: {
         Hokkaido: {
           href: "",
-          tooltip: {content: "<span>Hokkaido</span>"}
+          tooltip: { content: "<span>Hokkaido</span>" },
+          text: { content: "" },
         },
         Okinawa: {
           value: 2,
@@ -249,7 +272,7 @@ export default {
         Tokyo: {
           value: 44,
           href: "#",
-          tooltip: {content: "Test"}
+          tooltip: { content: "Test" },
         },
         Nara: {
           value: 45,
@@ -265,7 +288,7 @@ export default {
         },
       },
     });
-
+    
     $(".container").trigger("update", this.updatedOptions);
   },
 };
@@ -276,16 +299,16 @@ export default {
   background-color: #8bcad9;
 }
 .mapael .mapTooltip {
-    position: absolute;
-    background-color: #474c4b;
-    moz-opacity: 0.70;
-    opacity: 0.70;
-    filter: alpha(opacity=70);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    max-width: 200px;
-    display: none;
-    color: #fff;
+  position: absolute;
+  background-color: #474c4b;
+  moz-opacity: 0.7;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1000;
+  max-width: 200px;
+  display: none;
+  color: #fff;
 }
 </style>
