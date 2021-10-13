@@ -74,26 +74,20 @@ export default {
           },
           eventHandlers: {
             click: function (e, id) {
-              var newData = {
-                areas: {},
-              };
-
-              console.log(id);
-              newData.areas[id] = {};
-
               if (id) {
                 $(".modal").remove();
                 var x = e.clientX;
                 var y = e.clientY;
                 $(".map").append(
-                  "<div class='modal "+id+"' style='left:" +
+                  "<div class='modal " +
+                    id +
+                    "' style='left:" +
                     x +
                     "px; top:" +
                     y +
                     "px'>Test id</div>"
                 );
               }
-              $(".container").trigger("update", [{ mapOptions: newData }]);
             },
           },
         },
