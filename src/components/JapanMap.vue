@@ -73,22 +73,25 @@ export default {
             animDuration: 0,
           },
           eventHandlers: {
-            click: function (e, id, mapElem) {
+            click: function (e, id) {
               var newData = {
                 areas: {},
               };
-              if (mapElem.originalAttrs.fill == "#5ba4ff") {
-                newData.areas[id] = {
-                  attrs: {
-                    fill: "#0088db",
-                  },
-                };
-              } else {
-                newData.areas[id] = {
-                  attrs: {
-                    fill: "#5ba4ff",
-                  },
-                };
+
+              console.log(id);
+              newData.areas[id] = {};
+
+              if (id) {
+                $(".modal").remove();
+                var x = e.clientX;
+                var y = e.clientY;
+                $(".map").append(
+                  "<div class='modal "+id+"' style='left:" +
+                    x +
+                    "px; top:" +
+                    y +
+                    "px'>Test id</div>"
+                );
               }
               $(".container").trigger("update", [{ mapOptions: newData }]);
             },
@@ -99,7 +102,6 @@ export default {
         Hokkaido: {
           href: "",
           tooltip: { content: "<span>Hokkaido</span>" },
-          text: { content: "" },
         },
         Okinawa: {
           value: 2,
@@ -271,7 +273,7 @@ export default {
         },
         Tokyo: {
           value: 44,
-          href: "#",
+          href: "",
           tooltip: { content: "Test" },
         },
         Nara: {
@@ -288,7 +290,7 @@ export default {
         },
       },
     });
-    
+
     $(".container").trigger("update", this.updatedOptions);
   },
 };
@@ -310,5 +312,8 @@ export default {
   max-width: 200px;
   display: none;
   color: #fff;
+}
+.modal {
+  position: absolute;
 }
 </style>
